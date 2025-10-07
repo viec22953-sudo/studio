@@ -14,7 +14,7 @@ export default function Footer() {
             <span className="text-2xl font-bold tracking-tight text-primary">
               WinWin
             </span>
-            <span className="text-2xl font-bold tracking-tight">Tint</span>
+            <span className="text-2xl font-bold tracking-tight">WindowTint</span>
           </Link>
           <p className="text-foreground/80 text-center md:text-left">
             Your trusted partner for premium window tinting.
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container text-center text-xs text-foreground/60 mt-8">
-        © {new Date().getFullYear()} WinWin Tint. All Rights Reserved.
+        © {new Date().getFullYear()} WinWin WindowTint. All Rights Reserved.
       </div>
     </footer>
   );

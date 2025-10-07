@@ -3,9 +3,9 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'WinWin Window Tint | Premier Window Tinting in San Antonio, TX',
+  title: 'WinWin WindowTint | Premier Window Tinting in San Antonio, TX',
   description:
-    'Enhance and protect your vehicle, home, or office with WinWin Window Tint. We offer professional automotive, residential, and commercial window tinting services in San Antonio, TX. Get a free quote today!',
+    'Enhance and protect your vehicle, home, or office with WinWin WindowTint. We offer professional automotive, residential, and commercial window tinting services in San Antonio, TX. Get a free quote today!',
   keywords: ['window tint san antonio', 'car window tinting', 'home window tinting', 'ceramic tint', 'office window tinting'],
 };
 
