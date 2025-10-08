@@ -3,8 +3,8 @@
     {
       "id": "hero-car",
       "description": "Sleek car with tinted windows parked in a modern garage.",
-      "imageUrl": "https://picsum.photos/seed/hero-car/1920/1080",
-      "imageHint": "tinted car"
+      "imageUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxAWSUyMHNwb3J0cyUyMGNhcnxlbnwwfHx8fDE3MjE0MDY3OTB8MA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "sports car"
     },
     {
       "id": "gallery-car-before-1",
