@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { submitQuote, type State } from "@/app/actions";
 import { useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -34,7 +35,7 @@ function SubmitButton() {
 
 export default function QuoteSection() {
   const initialState: State = { message: null, errors: {}, success: false };
-  const [state, dispatch] = useFormState(submitQuote, initialState);
+  const [state, dispatch] = useActionState(submitQuote, initialState);
   const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
 
