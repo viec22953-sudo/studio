@@ -37,7 +37,7 @@ export default function ServicesSection() {
             </CardHeader>
             <CardContent>
               <CardDescription>
-                Lower energy costs, increase comfort, and protect your furniture from fading. Ideal for both residential and commercial properties.
+                Lower energy costs, increase comfort and privacy, and protect your furniture from fading. Ideal for both residential and commercial properties.
               </CardDescription>
             </CardContent>
           </Card>
