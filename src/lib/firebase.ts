@@ -1,10 +1,7 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// IMPORTANT: 
-// Your web app's Firebase configuration. Replace with your own project's config.
-// For security, it's recommended to store these values in environment variables.
-// Example: process.env.NEXT_PUBLIC_FIREBASE_API_KEY
+// Your web app's Firebase configuration.
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "your-api-key",
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "your-auth-domain",
@@ -14,7 +11,18 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "your-app-id",
 };
 
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore(app);
+function getFirebaseApp() {
+    if (getApps().length > 0) {
+        return getApp();
+    }
+    return initializeApp(firebaseConfig);
+}
 
-export { app, db };
+function getDb() {
+    const app = getFirebaseApp();
+    return getFirestore(app);
+}
+
+
+export const db = getDb();
+export const app = getFirebaseApp();

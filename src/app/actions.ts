@@ -56,8 +56,15 @@ export async function submitQuote(
       message: "Thank you! Your quote request has been sent.",
       success: true,
     };
-  } catch (e) {
+  } catch (e: any) {
     console.error("Error adding document: ", e);
+    // Check for specific Firebase errors if needed
+    if (e.code === 'unavailable') {
+         return {
+            message: "The service is currently unavailable. This may be a network issue or a problem with Firebase project configuration. Please check your internet connection and Firebase setup.",
+            success: false,
+        };
+    }
     return {
       message: "Something went wrong. Please try again later.",
       success: false,
