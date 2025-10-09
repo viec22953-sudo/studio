@@ -91,7 +91,7 @@ export default function QuoteSection() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="serviceType">Vehicle/Service Type</Label>
+                  <Label htmlFor="serviceType">Service Type</Label>
                   <Select name="serviceType" required>
                     <SelectTrigger>
                       <SelectValue placeholder="Select a service" />
