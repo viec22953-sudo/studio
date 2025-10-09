@@ -7,7 +7,7 @@ export default function AboutSection() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               Protection, Privacy, and Perfection.
             </h2>
-            <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-center">
               At WinWin Window Tint, we are dedicated to providing our clients with the highest quality window films and installation services. Our expert technicians use precision techniques to ensure a flawless finish every time. We believe in enhancing your comfort and security, whether you're on the road or in your home, delivering a win-win solution for every customer.
             </p>
           </div>
