@@ -7,6 +7,12 @@
       "imageHint": "sports car"
     },
     {
+      "id": "about-team",
+      "description": "A diverse team of 8 professional employees standing together in a modern office, smiling confidently.",
+      "imageUrl": "https://picsum.photos/seed/team/800/600",
+      "imageHint": "diverse team"
+    },
+    {
       "id": "gallery-car-before-1",
       "description": "Car with clear windows before tinting.",
       "imageUrl": "https://images.unsplash.com/photo-1686218661637-dd10ecd3666d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXIlMjB3aW5kb3d8ZW58MHx8fHwxNzU5NzE5NDYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
