@@ -9,7 +9,7 @@ export default function AboutSection() {
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-left">
-              Protection and Privacy
+              Expert Service for Unmatched Protection
             </h2>
             <p className="max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-left">
               At WinWin Window Tint, we are dedicated to providing our clients
