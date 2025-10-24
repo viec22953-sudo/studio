@@ -1,8 +1,8 @@
 "use server";
 
 import { z } from "zod";
-import { db } from "@/lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 const QuoteSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -47,6 +47,13 @@ export async function submitQuote(
       message: "Validation failed. Please check your input.",
       success: false,
     };
+  }
+  
+  if (!db) {
+    return {
+      message: "Database not initialized. Please try again later.",
+      success: false,
+    }
   }
 
   try {

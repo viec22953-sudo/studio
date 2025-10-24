@@ -1,7 +1,6 @@
-import { initializeApp, getApps, getApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { initializeApp, getApps, getApp, FirebaseApp } from "firebase/app";
+import { getFirestore, Firestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration.
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "your-api-key",
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "your-auth-domain",
@@ -11,18 +10,15 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "your-app-id",
 };
 
-function getFirebaseApp() {
-    if (getApps().length > 0) {
-        return getApp();
-    }
-    return initializeApp(firebaseConfig);
+let app: FirebaseApp;
+let db: Firestore;
+
+if (typeof window !== 'undefined') {
+    app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+    db = getFirestore(app);
+} else {
+    // In a server-side context, you might want to handle this differently,
+    // but for client-side actions, this will be initialized in the browser.
 }
 
-function getDb() {
-    const app = getFirebaseApp();
-    return getFirestore(app);
-}
-
-
-export const db = getDb();
-export const app = getFirebaseApp();
+export { app, db };
