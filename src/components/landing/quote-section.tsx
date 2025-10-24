@@ -65,7 +65,7 @@ export default function QuoteSection() {
             Request a Free Quote
           </h2>
           <p className="mx-auto max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Fill out the form below, and we'll get back to you with a personalized quote as soon as possible.
+            Fill out the form below, and we'll get back to you with a personalized quote as soon as possible. Or call 1-800-NUMBER to speak to a representative.
           </p>
         </div>
         <div className="mx-auto w-full max-w-lg">
