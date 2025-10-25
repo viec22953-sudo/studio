@@ -63,7 +63,7 @@ export default function ServicesSection() {
             Only winners come to WinWin — and winners get guaranteed results. Every tint we install comes with a 100% satisfaction guarantee. If your tint fails because of our work or the film itself, we’ll fix or replace it at no cost within the warranty period. Life happens, but when it comes to our craftsmanship, we don’t play around. WinWin means you win twice — once with great tint, and again with peace of mind.
           </p>
           <p className="mx-auto mt-4 max-w-[700px] text-sm text-foreground/60">
-            “Our work is covered by a lifetime workmanship warranty for the original owner. Tint films are backed by the manufacturer’s 5–10 year warranty, depending on the film selected.”
+            Our work is covered by a lifetime workmanship warranty for the original owner. Tint films are backed by the manufacturer’s 5–10 year warranty, depending on the film selected.
           </p>
         </div>
       </div>
