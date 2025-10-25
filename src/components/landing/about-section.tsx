@@ -12,7 +12,7 @@ export default function AboutSection() {
               Expert Service for Unmatched Protection
             </h2>
             <p className="max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-left">
-              At <span className="text-primary font-bold">WinWinWindowtint</span>, we are dedicated to providing our clients
+              At <span className="font-bold"><span className="text-primary">WinWin</span>Windowtint</span>, we are dedicated to providing our clients
               with the highest quality window films and installation services.
               Our expert technicians use precision techniques to ensure a
               flawless finish every time. We believe in enhancing your comfort
