@@ -9,8 +9,8 @@
     {
       "id": "about-team",
       "description": "A diverse team of 8 professional employees standing together in a modern office, smiling confidently.",
-      "imageUrl": "https://picsum.photos/seed/team/800/600",
-      "imageHint": "diverse team"
+      "imageUrl": "https://images.unsplash.com/photo-1646531839844-034be6a06aad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8d2luZG93JTIwdGludHxlbnwwfHx8fDE3NjEzNjAxMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "window tint"
     },
     {
       "id": "gallery-car-before-1",
@@ -21,19 +21,19 @@
     {
       "id": "gallery-car-after-1",
       "description": "Car with dark tinted windows.",
-      "imageUrl": "https://picsum.photos/seed/car-after-1/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1710179721186-72aba0b3c90b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0aW50ZWQlMjBjYXJ8ZW58MHx8fHwxNzYxMzYwMTQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tinted car"
     },
     {
       "id": "gallery-house-before-1",
       "description": "House with large clear windows.",
-      "imageUrl": "https://picsum.photos/seed/house-before-1/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1614411477582-722ee125ceff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxob3VzZSUyMHdpbmRvd3xlbnwwfHx8fDE3NjEzNjAxNDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "house window"
     },
     {
       "id": "gallery-house-after-1",
       "description": "House with reflective tinted windows for privacy.",
-      "imageUrl": "https://picsum.photos/seed/house-after-1/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1632245084232-92b16ac80d92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0aW50ZWQlMjB3aW5kb3d8ZW58MHx8fHwxNzYxMzYwMTQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tinted window"
     },
     {
@@ -45,7 +45,7 @@
     {
       "id": "gallery-office-after-1",
       "description": "Office building with dark tinted glass facade.",
-      "imageUrl": "https://picsum.photos/seed/office-after-1/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1623662063260-a461db100d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0aW50ZWQlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjEzNjAxNDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tinted building"
     }
   ]
