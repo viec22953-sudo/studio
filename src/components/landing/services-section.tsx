@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Car, Home, ShieldCheck } from "lucide-react";
+import { Car, Home, ShieldCheck, BadgeCheck } from "lucide-react";
 
 export default function ServicesSection() {
   return (
@@ -53,6 +53,15 @@ export default function ServicesSection() {
               </CardDescription>
             </CardContent>
           </Card>
+        </div>
+        <div className="mt-16 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary">
+            <BadgeCheck className="h-5 w-5" />
+            <span className="font-semibold">Our Guarantee</span>
+          </div>
+          <p className="mx-auto mt-4 max-w-[700px] text-lg text-foreground/80">
+            We offer a 100% guarantee on our work. If your tint is damaged, we will replace it free of charge.
+          </p>
         </div>
       </div>
     </section>
