@@ -60,7 +60,7 @@ export default function ServicesSection() {
             <span className="font-semibold">Our Guarantee</span>
           </div>
           <p className="mx-auto mt-4 max-w-[700px] text-lg text-foreground/80">
-            We offer a 100% guarantee on our work. If your tint is damaged, we will replace it free of charge.
+            Only winners come to WinWin — and winners get guaranteed results. Every tint we install comes with a 100% satisfaction guarantee. If your tint fails because of our work or the film itself, we’ll fix or replace it at no cost within the warranty period. Life happens, but when it comes to our craftsmanship, we don’t play around. WinWin means you win twice — once with great tint, and again with peace of mind.
           </p>
         </div>
       </div>
