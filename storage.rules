@@ -1,0 +1,16 @@
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Allow anyone to write to the "leads" folder.
+    // This is for the public quote request form.
+    // Reads, updates, and deletes are denied.
+    match /leads/{leadId} {
+      allow read, update, delete: if false;
+      allow create: if true;
+    }
+
+    // Deny all other access to storage by default.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
