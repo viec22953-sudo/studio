@@ -1,8 +1,8 @@
 "use server";
 
 import { z } from "zod";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "@/lib/firebase";
+import { collection, addDoc, getFirestore } from "firebase/firestore";
+import { app } from "@/lib/firebase";
 
 const QuoteSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -48,15 +48,9 @@ export async function submitQuote(
       success: false,
     };
   }
-  
-  if (!db) {
-    return {
-      message: "Database not initialized. Please try again later.",
-      success: false,
-    }
-  }
 
   try {
+    const db = getFirestore(app);
     const docRef = await addDoc(collection(db, "quotes"), validatedFields.data);
     console.log("Document written with ID: ", docRef.id);
     return {
