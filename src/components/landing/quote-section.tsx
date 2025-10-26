@@ -46,20 +46,20 @@ export default function QuoteSection() {
   const { storage } = useFirebase();
 
   useEffect(() => {
-    async function handleUpload() {
+    const handleUpload = async () => {
       if (state.success && state.data) {
         if (!storage) {
           toast({
-              title: "Error",
-              description: "Firebase Storage is not connected. Please try again later.",
-              variant: "destructive",
+            title: "Upload Error",
+            description: "Firebase Storage service is not available. Please try again later.",
+            variant: "destructive",
           });
           return;
         }
 
         setIsUploading(true);
         try {
-          const fileName = `leads/${Date.now()}-${state.data.name.replace(/\s+/g, '-')}.json`;
+          const fileName = `Leads/${Date.now()}-${state.data.name.replace(/\s+/g, '-')}.json`;
           const storageRef = ref(storage, fileName);
           const dataString = JSON.stringify(state.data, null, 2);
 
@@ -75,8 +75,8 @@ export default function QuoteSection() {
         } catch (e: any) {
           console.error("Error uploading to storage: ", e);
           toast({
-            title: "Error",
-            description: e.message || "Could not send quote. Please try again later.",
+            title: "Upload Failed",
+            description: e.message || "Could not send your quote. Please try again.",
             variant: "destructive",
           });
         } finally {
@@ -84,12 +84,12 @@ export default function QuoteSection() {
         }
       } else if (state.message && !state.success) {
         toast({
-          title: "Error",
+          title: "Validation Error",
           description: state.message,
           variant: "destructive",
         });
       }
-    }
+    };
 
     handleUpload();
   }, [state, toast, storage]);
