@@ -1,8 +1,8 @@
 "use server";
 
 import { z } from "zod";
-import { getStorage, ref, uploadString } from "firebase/storage";
-import { app } from "@/lib/firebase";
+import { ref, uploadString } from "firebase/storage";
+import { storage } from "@/lib/firebase";
 
 const QuoteSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -50,11 +50,8 @@ export async function submitQuote(
   }
 
   try {
-    // Correctly initialize storage by passing the app instance
-    const storage = getStorage(app);
-    const fileName = `${Date.now()}-${validatedFields.data.name.replace(/\s+/g, '-')}.json`;
-    const storageRef = ref(storage, `leads/${fileName}`);
-
+    const fileName = `leads/${Date.now()}-${validatedFields.data.name.replace(/\s+/g, '-')}.json`;
+    const storageRef = ref(storage, fileName);
     const dataString = JSON.stringify(validatedFields.data, null, 2);
 
     await uploadString(storageRef, dataString, 'raw', {
@@ -67,19 +64,6 @@ export async function submitQuote(
     };
   } catch (e: any) {
     console.error("Error uploading to storage: ", e);
-    // Check for specific Firebase errors if needed
-    if (e.code === 'storage/unauthorized') {
-         return {
-            message: "You are not authorized to perform this action. Please check your Storage security rules.",
-            success: false,
-        };
-    }
-     if (e.code === 'unavailable' || e.code === 'storage/object-not-found' || e.code === 'storage/bucket-not-found') {
-         return {
-            message: "The service is currently unavailable. This may be a network issue or a problem with Firebase project configuration. Please check your internet connection and Firebase setup.",
-            success: false,
-        };
-    }
     return {
       message: "Something went wrong. Please try again later.",
       success: false,
