@@ -26,27 +26,23 @@ export default function RootLayout({
         {children}
         <Toaster />
         <Script
-          id="firebase-sdk"
-          src="https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js"
-          strategy="afterInteractive"
-        />
-        <Script
           id="firebase-analytics"
           strategy="afterInteractive"
           type="module"
           dangerouslySetInnerHTML={{
             __html: `
+              import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
               import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
               const firebaseConfig = {
                 apiKey: "AIzaSyAzNg83NB4SJHSg9BKHpW05J2pbb4nzEAc",
                 authDomain: "studio-6663131171-dc932.firebaseapp.com",
-                projectId: "studio-6663131171-dc922",
+                projectId: "studio-6663131171-dc932",
                 storageBucket: "studio-6663131171-dc932.appspot.com",
                 messagingSenderId: "562869782317",
                 appId: "1:562869782317:web:0355ca5ef5641ca36235a4",
                 measurementId: "G-Z52N1Z88DP"
               };
-              const app = window.firebase.initializeApp(firebaseConfig);
+              const app = initializeApp(firebaseConfig);
               getAnalytics(app);
             `,
           }}
