@@ -1,23 +1,8 @@
 "use server";
 
 import { z } from "zod";
-import { initializeApp, getApps } from "firebase/app";
 import { getStorage, ref, uploadString } from "firebase/storage";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAzNg83NB4SJHSg9BKHpW05J2pbb4nzEAc",
-  authDomain: "studio-6663131171-dc932.firebaseapp.com",
-  projectId: "studio-6663131171-dc932",
-  storageBucket: "studio-6663131171-dc932.appspot.com",
-  messagingSenderId: "562869782317",
-  appId: "1:562869782317:web:0355ca5ef5641ca36235a4",
-  measurementId: "G-Z52N1Z88DP"
-};
-
-// Initialize Firebase
-if (!getApps().length) {
-  initializeApp(firebaseConfig);
-}
+import { app } from "@/lib/firebase";
 
 const QuoteSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -65,7 +50,6 @@ export async function submitQuote(
   }
 
   try {
-    const app = getApps()[0];
     const storage = getStorage(app);
     const fileName = `leads/${Date.now()}-${validatedFields.data.name.replace(/\s+/g, '-')}.json`;
     const storageRef = ref(storage, fileName);
