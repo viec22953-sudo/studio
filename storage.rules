@@ -1,15 +1,17 @@
+rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
-    // Allow anyone to write to the "leads" folder.
-    // This is for the public quote request form.
-    // Reads, updates, and deletes are denied.
+    // Allow anyone to CREATE files in the "leads" folder for the public form.
+    // Explicitly deny read, update, and delete to protect submitted data.
     match /leads/{leadId} {
       allow read, update, delete: if false;
       allow create: if true;
     }
 
-    // Deny all other access to storage by default.
-    match /{allPaths=**} {
+    // All other paths in storage are not publicly accessible.
+    // This rule is not strictly necessary if you have no other match statements,
+    // as access is denied by default, but it makes the intent clear.
+    match /{path=**} {
       allow read, write: if false;
     }
   }
