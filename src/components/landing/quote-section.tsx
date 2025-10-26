@@ -24,8 +24,8 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
-import { initializeApp, getApp, getApps } from "firebase/app";
-import { getStorage, ref, uploadString } from "firebase/storage";
+import { useFirebase } from "@/lib/firebase";
+import { ref, uploadString } from "firebase/storage";
 
 
 function SubmitButton() {
@@ -43,27 +43,13 @@ export default function QuoteSection() {
   const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
   const [isUploading, setIsUploading] = useState(false);
+  const { storage } = useFirebase();
 
   useEffect(() => {
     async function handleUpload() {
-      if (state.success && state.data) {
+      if (state.success && state.data && storage) {
         setIsUploading(true);
         try {
-          // This is a public configuration and is safe to include here.
-          const firebaseConfig = {
-            apiKey: "AIzaSyAzNg83NB4SJHSg9BKHpW05J2pbb4nzEAc",
-            authDomain: "studio-6663131171-dc932.firebaseapp.com",
-            projectId: "studio-6663131171-dc932",
-            storageBucket: "studio-6663131171-dc932.appspot.com",
-            messagingSenderId: "562869782317",
-            appId: "1:562869782317:web:0355ca5ef5641ca36235a4",
-            measurementId: "G-Z52N1Z88DP"
-          };
-          
-          // Get the default Firebase app instance. If it's not initialized, initialize it.
-          const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-          const storage = getStorage(app);
-
           const fileName = `leads/${Date.now()}-${state.data.name.replace(/\s+/g, '-')}.json`;
           const storageRef = ref(storage, fileName);
           const dataString = JSON.stringify(state.data, null, 2);
@@ -93,11 +79,17 @@ export default function QuoteSection() {
           description: state.message,
           variant: "destructive",
         });
+      } else if (state.success && !storage) {
+        toast({
+            title: "Error",
+            description: "Firebase is not connected. Please try again later.",
+            variant: "destructive",
+        });
       }
     }
 
     handleUpload();
-  }, [state, toast]);
+  }, [state, toast, storage]);
 
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
