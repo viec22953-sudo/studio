@@ -1,8 +1,8 @@
 "use server";
 
 import { z } from "zod";
-import { ref, uploadString } from "firebase/storage";
-import { storage } from "@/lib/firebase";
+import { getStorage, ref, uploadString } from "firebase/storage";
+import { app } from "@/lib/firebase";
 
 const QuoteSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -50,6 +50,7 @@ export async function submitQuote(
   }
 
   try {
+    const storage = getStorage(app);
     const fileName = `leads/${Date.now()}-${validatedFields.data.name.replace(/\s+/g, '-')}.json`;
     const storageRef = ref(storage, fileName);
     const dataString = JSON.stringify(validatedFields.data, null, 2);
