@@ -1,16 +1,16 @@
-import { initializeApp, getApps, getApp, FirebaseApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "your-api-key",
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "your-auth-domain",
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "your-project-id",
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "your-storage-bucket",
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "your-messaging-sender-id",
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "your-app-id",
+  apiKey: "AIzaSyAzNg83NB4SJHSg9BKHpW05J2pbb4nzEAc",
+  authDomain: "studio-6663131171-dc932.firebaseapp.com",
+  projectId: "studio-6663131171-dc932",
+  storageBucket: "studio-6663131171-dc932.appspot.com",
+  messagingSenderId: "562869782317",
+  appId: "1:562869782317:web:0355ca5ef5641ca36235a4",
+  measurementId: "G-Z52N1Z88DP"
 };
 
 // Initialize Firebase
-const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 export { app };

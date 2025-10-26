@@ -21,33 +21,45 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              const firebaseConfig = {
+                apiKey: "AIzaSyAzNg83NB4SJHSg9BKHpW05J2pbb4nzEAc",
+                authDomain: "studio-6663131171-dc932.firebaseapp.com",
+                projectId: "studio-6663131171-dc932",
+                storageBucket: "studio-6663131171-dc932.appspot.com",
+                messagingSenderId: "562869782317",
+                appId: "1:562869782317:web:0355ca5ef5641ca36235a4",
+                measurementId: "G-Z52N1Z88DP"
+              };
+
+              // Prevent duplicate initialization
+              if (typeof window !== 'undefined' && !window._firebaseApp) {
+                window._firebaseConfig = firebaseConfig;
+              }
+          `,
+          }}
+          id="firebase-config"
+        />
       </head>
       <body className="font-body antialiased">
         {children}
         <Toaster />
-        <Script id="firebase-sdk" src="https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js" />
-        <Script id="firebase-analytics-sdk" src="https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js" />
+        <Script id="firebase-app-sdk" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js" strategy="afterInteractive" />
+        <Script id="firebase-storage-sdk" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js" strategy="afterInteractive" />
+        <Script id="firebase-analytics-sdk" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js" strategy="afterInteractive" />
         <Script id="firebase-init" strategy="afterInteractive">
           {`
-            const firebaseConfig = {
-              apiKey: "AIzaSyAzNg83NB4SJHSg9BKHpW05J2pbb4nzEAc",
-              authDomain: "studio-6663131171-dc932.firebaseapp.com",
-              projectId: "studio-6663131171-dc932",
-              storageBucket: "studio-6663131171-dc92.appspot.com",
-              messagingSenderId: "562869782317",
-              appId: "1:562869782317:web:0355ca5ef5641ca36235a4",
-              measurementId: "G-Z52N1Z88DP"
-            };
-
-            // Initialize Firebase
-            if (typeof window !== 'undefined' && !window._firebaseApp) {
-               window._firebaseApp = firebase.initializeApp(firebaseConfig);
-               firebase.getAnalytics(window._firebaseApp);
+            if (typeof window !== 'undefined' && window._firebaseConfig && !window._firebaseApp) {
+               window._firebaseApp = firebase.initializeApp(window._firebaseConfig);
+               if (firebase.analytics) {
+                  firebase.analytics();
+               }
             }
           `}
         </Script>
       </body>
-      
     </html>
   );
 }
