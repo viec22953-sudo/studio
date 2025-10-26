@@ -51,7 +51,7 @@ export async function submitQuote(
 
   try {
     const db = getFirestore(app);
-    const docRef = await addDoc(collection(db, "quotes"), validatedFields.data);
+    const docRef = await addDoc(collection(db, "leads"), validatedFields.data);
     console.log("Document written with ID: ", docRef.id);
     return {
       message: "Thank you! Your quote request has been sent.",
