@@ -50,6 +50,7 @@ export async function submitQuote(
   }
 
   try {
+    // Correctly initialize storage by passing the app instance
     const storage = getStorage(app);
     const fileName = `${Date.now()}-${validatedFields.data.name.replace(/\s+/g, '-')}.json`;
     const storageRef = ref(storage, `leads/${fileName}`);
