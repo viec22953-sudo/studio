@@ -10,15 +10,8 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "your-app-id",
 };
 
-let app: FirebaseApp;
-let db: Firestore;
-
-if (typeof window !== 'undefined') {
-    app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
-    db = getFirestore(app);
-} else {
-    // In a server-side context, you might want to handle this differently,
-    // but for client-side actions, this will be initialized in the browser.
-}
+// Initialize Firebase
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 export { app, db };
