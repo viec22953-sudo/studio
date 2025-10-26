@@ -73,7 +73,7 @@ export async function submitQuote(
             success: false,
         };
     }
-     if (e.code === 'unavailable') {
+     if (e.code === 'unavailable' || e.code === 'storage/object-not-found' || e.code === 'storage/bucket-not-found') {
          return {
             message: "The service is currently unavailable. This may be a network issue or a problem with Firebase project configuration. Please check your internet connection and Firebase setup.",
             success: false,
