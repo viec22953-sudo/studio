@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApp, getApps } from "firebase/app";
 import { getStorage, ref, uploadString } from "firebase/storage";
 
 
@@ -59,8 +59,9 @@ export default function QuoteSection() {
             appId: "1:562869782317:web:0355ca5ef5641ca36235a4",
             measurementId: "G-Z52N1Z88DP"
           };
-
-          const app = initializeApp(firebaseConfig, 'quote-uploader');
+          
+          // Get the default Firebase app instance. If it's not initialized, initialize it.
+          const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
           const storage = getStorage(app);
 
           const fileName = `leads/${Date.now()}-${state.data.name.replace(/\s+/g, '-')}.json`;
