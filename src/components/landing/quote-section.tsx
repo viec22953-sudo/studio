@@ -2,8 +2,8 @@
 
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
-import { submitQuote, type State } from "@/app/actions";
-import { useEffect, useRef } from "react";
+import { validateQuote, type State } from "@/app/actions";
+import { useEffect, useRef, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,6 +24,10 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
+import { initializeApp } from "firebase/app";
+import { getStorage, ref, uploadString } from "firebase/storage";
+
+
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
@@ -35,19 +39,54 @@ function SubmitButton() {
 
 export default function QuoteSection() {
   const initialState: State = { message: null, errors: {}, success: false };
-  const [state, dispatch] = useActionState(submitQuote, initialState);
+  const [state, dispatch] = useActionState(validateQuote, initialState);
   const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
+  const [isUploading, setIsUploading] = useState(false);
 
   useEffect(() => {
-    if (state.message) {
-      if (state.success) {
-        toast({
-          title: "Success!",
-          description: state.message,
-        });
-        formRef.current?.reset();
-      } else {
+    async function handleUpload() {
+      if (state.success && state.data) {
+        setIsUploading(true);
+        try {
+          // This is a public configuration and is safe to include here.
+          const firebaseConfig = {
+            apiKey: "AIzaSyAzNg83NB4SJHSg9BKHpW05J2pbb4nzEAc",
+            authDomain: "studio-6663131171-dc932.firebaseapp.com",
+            projectId: "studio-6663131171-dc932",
+            storageBucket: "studio-6663131171-dc932.appspot.com",
+            messagingSenderId: "562869782317",
+            appId: "1:562869782317:web:0355ca5ef5641ca36235a4",
+            measurementId: "G-Z52N1Z88DP"
+          };
+
+          const app = initializeApp(firebaseConfig, 'quote-uploader');
+          const storage = getStorage(app);
+
+          const fileName = `leads/${Date.now()}-${state.data.name.replace(/\s+/g, '-')}.json`;
+          const storageRef = ref(storage, fileName);
+          const dataString = JSON.stringify(state.data, null, 2);
+
+          await uploadString(storageRef, dataString, 'raw', {
+            contentType: 'application/json'
+          });
+
+          toast({
+            title: "Success!",
+            description: "Thank you! Your quote request has been sent.",
+          });
+          formRef.current?.reset();
+        } catch (e: any) {
+          console.error("Error uploading to storage: ", e);
+          toast({
+            title: "Error",
+            description: "Could not send quote. Please try again later.",
+            variant: "destructive",
+          });
+        } finally {
+          setIsUploading(false);
+        }
+      } else if (state.message && !state.success) {
         toast({
           title: "Error",
           description: state.message,
@@ -55,6 +94,8 @@ export default function QuoteSection() {
         });
       }
     }
+
+    handleUpload();
   }, [state, toast]);
 
   return (

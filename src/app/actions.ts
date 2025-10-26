@@ -1,7 +1,6 @@
 "use server";
 
 import { z } from "zod";
-import { adminStorage } from "@/lib/firebase-admin-config";
 
 const QuoteSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -26,9 +25,10 @@ export type State = {
   };
   message?: string | null;
   success?: boolean;
+  data?: z.infer<typeof QuoteSchema>;
 };
 
-export async function submitQuote(
+export async function validateQuote(
   prevState: State,
   formData: FormData
 ): Promise<State> {
@@ -47,26 +47,10 @@ export async function submitQuote(
       success: false,
     };
   }
-
-  try {
-    const bucket = adminStorage.bucket();
-    const fileName = `leads/${Date.now()}-${validatedFields.data.name.replace(/\s+/g, '-')}.json`;
-    const file = bucket.file(fileName);
-    const dataString = JSON.stringify(validatedFields.data, null, 2);
-
-    await file.save(dataString, {
-      contentType: 'application/json'
-    });
     
-    return {
-      message: "Thank you! Your quote request has been sent.",
-      success: true,
-    };
-  } catch (e: any) {
-    console.error("Error uploading to storage: ", e);
-    return {
-      message: "Something went wrong. Please try again later.",
-      success: false,
-    };
-  }
+  return {
+    message: "Validation successful.",
+    success: true,
+    data: validatedFields.data,
+  };
 }
