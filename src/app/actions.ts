@@ -1,8 +1,23 @@
 "use server";
 
 import { z } from "zod";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { app } from "@/lib/firebase"; // Import the initialized app
+
+// This is a public configuration and is safe to include here.
+const firebaseConfig = {
+  apiKey: "AIzaSyAzNg83NB4SJHSg9BKHpW05J2pbb4nzEAc",
+  authDomain: "studio-6663131171-dc932.firebaseapp.com",
+  projectId: "studio-6663131171-dc932",
+  storageBucket: "studio-6663131171-dc932.appspot.com",
+  messagingSenderId: "562869782317",
+  appId: "1:562869782317:web:0355ca5ef5641ca36235a4",
+  measurementId: "G-Z52N1Z88DP"
+};
+
+// Initialize Firebase for server-side use
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const db = getFirestore(app);
 
 const QuoteSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -50,7 +65,6 @@ export async function validateQuote(
   }
 
   try {
-    const db = getFirestore(app);
     await addDoc(collection(db, "contacts"), {
       ...validatedFields.data,
       createdAt: new Date(),
