@@ -4,6 +4,7 @@ import { createContext, useContext, ReactNode } from "react";
 import { initializeApp, getApps, getApp, FirebaseApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getStorage, FirebaseStorage } from "firebase/storage";
+import { getFirestore, Firestore } from "firebase/firestore";
 
 // This is a public configuration and is safe to include here.
 const firebaseConfig = {
@@ -17,27 +18,30 @@ const firebaseConfig = {
 };
 
 type FirebaseContextType = {
-  app: FirebaseApp | null;
-  storage: FirebaseStorage | null;
+  app: FirebaseApp;
+  storage: FirebaseStorage;
+  db: Firestore;
 };
 
-const FirebaseContext = createContext<FirebaseContextType>({ app: null, storage: null });
+const FirebaseContext = createContext<FirebaseContextType | undefined>(undefined);
+
+export let app: FirebaseApp;
+if (!getApps().length) {
+  app = initializeApp(firebaseConfig);
+  if (typeof window !== "undefined") {
+    getAnalytics(app);
+  }
+} else {
+  app = getApp();
+}
+
+const storage = getStorage(app);
+const db = getFirestore(app);
+
 
 export const FirebaseProvider = ({ children }: { children: ReactNode }) => {
-  let app: FirebaseApp;
-  if (!getApps().length) {
-    app = initializeApp(firebaseConfig);
-    if (typeof window !== "undefined") {
-      getAnalytics(app);
-    }
-  } else {
-    app = getApp();
-  }
-
-  const storage = getStorage(app);
-
   return (
-    <FirebaseContext.Provider value={{ app, storage }}>
+    <FirebaseContext.Provider value={{ app, storage, db }}>
       {children}
     </FirebaseContext.Provider>
   );

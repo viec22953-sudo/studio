@@ -3,14 +3,11 @@
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { validateQuote, type State } from "@/app/actions";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
   CardContent,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -23,10 +20,6 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-
-import { useFirebase } from "@/lib/firebase";
-import { ref, uploadString } from "firebase/storage";
-
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -42,57 +35,24 @@ export default function QuoteSection() {
   const [state, dispatch] = useActionState(validateQuote, initialState);
   const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
-  const [isUploading, setIsUploading] = useState(false);
-  const { storage } = useFirebase();
 
   useEffect(() => {
-    const handleUpload = async () => {
-      if (state.success && state.data) {
-        if (!storage) {
-          toast({
-            title: "Upload Error",
-            description: "Firebase Storage service is not available. Please try again later.",
-            variant: "destructive",
-          });
-          return;
-        }
-
-        setIsUploading(true);
-        try {
-          const fileName = `Leads/${Date.now()}-${state.data.name.replace(/\s+/g, '-')}.json`;
-          const storageRef = ref(storage, fileName);
-          const dataString = JSON.stringify(state.data, null, 2);
-
-          await uploadString(storageRef, dataString, 'raw', {
-            contentType: 'application/json'
-          });
-
-          toast({
-            title: "Success!",
-            description: "Thank you! Your quote request has been sent.",
-          });
-          formRef.current?.reset();
-        } catch (e: any) {
-          console.error("Error uploading to storage: ", e);
-          toast({
-            title: "Upload Failed",
-            description: e.message || "Could not send your quote. Please try again.",
-            variant: "destructive",
-          });
-        } finally {
-          setIsUploading(false);
-        }
-      } else if (state.message && !state.success) {
+    if (state.message) {
+      if (state.success) {
         toast({
-          title: "Validation Error",
+          title: "Success!",
+          description: state.message,
+        });
+        formRef.current?.reset();
+      } else {
+        toast({
+          title: "Error",
           description: state.message,
           variant: "destructive",
         });
       }
-    };
-
-    handleUpload();
-  }, [state, toast, storage]);
+    }
+  }, [state, toast]);
 
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32">

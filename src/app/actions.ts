@@ -1,6 +1,8 @@
 "use server";
 
 import { z } from "zod";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { app } from "@/lib/firebase"; // Import the initialized app
 
 const QuoteSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -25,14 +27,13 @@ export type State = {
   };
   message?: string | null;
   success?: boolean;
-  data?: z.infer<typeof QuoteSchema>;
 };
 
 export async function validateQuote(
   prevState: State,
   formData: FormData
 ): Promise<State> {
-    const validatedFields = QuoteSchema.safeParse({
+  const validatedFields = QuoteSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
     phone: formData.get("phone"),
@@ -47,10 +48,22 @@ export async function validateQuote(
       success: false,
     };
   }
-    
-  return {
-    message: "Validation successful.",
-    success: true,
-    data: validatedFields.data,
-  };
+
+  try {
+    const db = getFirestore(app);
+    await addDoc(collection(db, "contacts"), {
+      ...validatedFields.data,
+      createdAt: new Date(),
+    });
+    return {
+      message: "Success! Your quote request has been sent.",
+      success: true,
+    };
+  } catch (e: any) {
+    console.error("Error adding document: ", e);
+    return {
+      message: "Database error: Could not save your quote. Please try again later.",
+      success: false,
+    };
+  }
 }
