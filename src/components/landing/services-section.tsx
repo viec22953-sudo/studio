@@ -54,7 +54,7 @@ export default function ServicesSection() {
             </CardContent>
           </Card>
         </div>
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center flex flex-col items-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary">
             <BadgeCheck className="h-5 w-5" />
             <span className="font-semibold">Our Guarantee</span>
