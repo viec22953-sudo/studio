@@ -4,7 +4,7 @@ import { Car, Home, ShieldCheck, BadgeCheck } from "lucide-react";
 export default function ServicesSection() {
   return (
     <section id="services" className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6 flex flex-col items-center">
+      <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">What We Offer</h2>
@@ -13,48 +13,46 @@ export default function ServicesSection() {
             </p>
           </div>
         </div>
-        <div className="w-full flex justify-center">
-          <div className="grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
-            <Card className="text-center flex flex-col h-full">
-              <CardHeader>
-                <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
-                  <Car className="h-8 w-8" />
-                </div>
-                <CardTitle>Automotive Tinting</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <CardDescription>
-                  Protect your vehicle's interior from harmful UV rays, reduce heat and glare, and enhance your privacy and security on the road.
-                </CardDescription>
-              </CardContent>
-            </Card>
-            <Card className="text-center flex flex-col h-full">
-              <CardHeader>
-                <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
-                  <Home className="h-8 w-8" />
-                </div>
-                <CardTitle>Home & Office Tinting</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <CardDescription>
-                  Lower energy costs, increase comfort, privacy, and protect your furniture from fading. Ideal for both residential and commercial properties.
-                </CardDescription>
-              </CardContent>
-            </Card>
-            <Card className="text-center flex flex-col h-full">
-              <CardHeader>
-                <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
-                  <ShieldCheck className="h-8 w-8" />
-                </div>
-                <CardTitle>Ceramic Film Options</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <CardDescription>
-                  Choose our top-of-the-line ceramic films for maximum heat rejection without interfering with electronic signals. The ultimate in performance and clarity.
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </div>
+        <div className="grid items-start justify-center gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
+          <Card className="text-center flex flex-col h-full max-w-sm mx-auto">
+            <CardHeader>
+              <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
+                <Car className="h-8 w-8" />
+              </div>
+              <CardTitle>Automotive Tinting</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <CardDescription>
+                Protect your vehicle's interior from harmful UV rays, reduce heat and glare, and enhance your privacy and security on the road.
+              </CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="text-center flex flex-col h-full max-w-sm mx-auto">
+            <CardHeader>
+              <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
+                <Home className="h-8 w-8" />
+              </div>
+              <CardTitle>Home & Office Tinting</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <CardDescription>
+                Lower energy costs, increase comfort, privacy, and protect your furniture from fading. Ideal for both residential and commercial properties.
+              </CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="text-center flex flex-col h-full max-w-sm mx-auto">
+            <CardHeader>
+              <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
+                <ShieldCheck className="h-8 w-8" />
+              </div>
+              <CardTitle>Ceramic Film Options</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <CardDescription>
+                Choose our top-of-the-line ceramic films for maximum heat rejection without interfering with electronic signals. The ultimate in performance and clarity.
+              </CardDescription>
+            </CardContent>
+          </Card>
         </div>
         <div className="mt-16 text-center flex flex-col items-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary">
