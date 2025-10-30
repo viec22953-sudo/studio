@@ -38,7 +38,7 @@ export default function ServicesSection() {
               <CardContent className="flex-grow">
                 <CardDescription>
                   Lower energy costs, increase comfort, privacy, and protect your furniture from fading. Ideal for both residential and commercial properties.
-                </d-CardDescription>
+                </CardDescription>
               </CardContent>
             </Card>
             <Card className="text-center flex flex-col h-full">
