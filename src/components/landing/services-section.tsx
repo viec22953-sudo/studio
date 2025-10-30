@@ -4,14 +4,12 @@ import { Car, Home, ShieldCheck, BadgeCheck } from "lucide-react";
 export default function ServicesSection() {
   return (
     <section id="services" className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6 flex flex-col items-center">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">What We Offer</h2>
-            <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              From your daily driver to your corner office, we've got you covered with premium tinting solutions.
-            </p>
-          </div>
+      <div className="w-full px-4 md:px-6 flex flex-col items-center text-center">
+        <div className="space-y-2 mb-12">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">What We Offer</h2>
+          <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            From your daily driver to your corner office, we've got you covered with premium tinting solutions.
+          </p>
         </div>
         <div className="grid items-start justify-center gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
           <Card className="text-center flex flex-col h-full max-w-sm mx-auto">
