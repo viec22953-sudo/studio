@@ -14,7 +14,7 @@ export default function Header() {
         </span>
         <span className="text-xl font-bold tracking-tight">WindowTint</span>
       </Link>
-      <nav className="ml-auto hidden lg:flex gap-4 sm:gap-6">
+      <nav className="ml-auto hidden lg:flex items-center gap-6">
         <Link
           href="#about"
           className="text-sm font-medium hover:underline underline-offset-4"
