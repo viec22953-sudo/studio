@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useActionState } from "react";
@@ -56,7 +57,7 @@ export default function QuoteSection() {
 
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container grid items-center justify-center gap-4 px-4 md:px-6">
+      <div className="w-full px-4 md:px-6 flex flex-col items-center">
         <div className="space-y-3 text-center">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
             Request a Free Quote
@@ -65,7 +66,7 @@ export default function QuoteSection() {
             Fill out the form below, and we'll get back to you with a personalized quote as soon as possible. Or call 1-800-NUMBER to speak to a representative.
           </p>
         </div>
-        <div className="mx-auto w-full max-w-lg">
+        <div className="mx-auto w-full max-w-lg mt-8">
           <Card>
             <CardContent className="pt-6">
               <form ref={formRef} action={dispatch} className="space-y-4">
