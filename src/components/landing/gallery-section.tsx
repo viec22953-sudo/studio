@@ -23,7 +23,7 @@ export default function GallerySection() {
 
   return (
     <section id="gallery" className="w-full py-12 md:py-24 lg:py-32 bg-card">
-      <div className="container flex flex-col items-center justify-center gap-4 px-4 text-center md:px-6">
+      <div className="w-full flex flex-col items-center justify-center gap-4 px-4 text-center md:px-6">
         <div className="space-y-3">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
             See the Difference
