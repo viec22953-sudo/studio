@@ -13,46 +13,48 @@ export default function ServicesSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
-          <Card className="text-center flex flex-col h-full">
-            <CardHeader>
-              <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
-                <Car className="h-8 w-8" />
-              </div>
-              <CardTitle>Automotive Tinting</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <CardDescription>
-                Protect your vehicle's interior from harmful UV rays, reduce heat and glare, and enhance your privacy and security on the road.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card className="text-center flex flex-col h-full">
-            <CardHeader>
-              <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
-                <Home className="h-8 w-8" />
-              </div>
-              <CardTitle>Home & Office Tinting</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <CardDescription>
-                Lower energy costs, increase comfort, privacy, and protect your furniture from fading. Ideal for both residential and commercial properties.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card className="text-center flex flex-col h-full">
-            <CardHeader>
-              <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
-                <ShieldCheck className="h-8 w-8" />
-              </div>
-              <CardTitle>Ceramic Film Options</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <CardDescription>
-                Choose our top-of-the-line ceramic films for maximum heat rejection without interfering with electronic signals. The ultimate in performance and clarity.
-              </CardDescription>
-            </CardContent>
-          </Card>
+        <div className="w-full flex justify-center">
+          <div className="grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
+            <Card className="text-center flex flex-col h-full">
+              <CardHeader>
+                <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
+                  <Car className="h-8 w-8" />
+                </div>
+                <CardTitle>Automotive Tinting</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <CardDescription>
+                  Protect your vehicle's interior from harmful UV rays, reduce heat and glare, and enhance your privacy and security on the road.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card className="text-center flex flex-col h-full">
+              <CardHeader>
+                <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
+                  <Home className="h-8 w-8" />
+                </div>
+                <CardTitle>Home & Office Tinting</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <CardDescription>
+                  Lower energy costs, increase comfort, privacy, and protect your furniture from fading. Ideal for both residential and commercial properties.
+                </d-CardDescription>
+              </CardContent>
+            </Card>
+            <Card className="text-center flex flex-col h-full">
+              <CardHeader>
+                <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
+                  <ShieldCheck className="h-8 w-8" />
+                </div>
+                <CardTitle>Ceramic Film Options</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <CardDescription>
+                  Choose our top-of-the-line ceramic films for maximum heat rejection without interfering with electronic signals. The ultimate in performance and clarity.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
         </div>
         <div className="mt-16 text-center flex flex-col items-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary">
