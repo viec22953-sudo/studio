@@ -51,7 +51,7 @@
     {
       "id": "guarantee-image",
       "description": "Technician applying window tint to a car with precision.",
-      "imageUrl": "https://images.unsplash.com/photo-1642034293883-3975d1b7348e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3aW5kb3clMjB0aW50JTIwaW5zdGFsbGF0aW9ufGVufDB8fHx8MTcyNDA3ODMyMHww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageUrl": "https://storage.cloud.google.com/publiccmsbucket/Window-Tinting-portland-3-1-2048x1536.webp",
       "imageHint": "tint installation"
     }
   ]
