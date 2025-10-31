@@ -114,7 +114,7 @@ export default function ServicesSection() {
                 <span className="font-semibold">We offer a wide selection of shades to choose from</span>
             </div>
             <p className="text-lg text-foreground/80">
-                This is a new section where you can add more details about your services, company values, or anything else you'd like to highlight. You can easily edit this placeholder text to fit your needs.
+                From 5% limo tint to 70% ultra-light, we’ve got every option to match your style, comfort, and privacy needs.
             </p>
             <p className="text-foreground/80">
                 For example, you could talk about the specific brands of film you use, your years of experience in the industry, or special offers you might have for new customers. This space is flexible and can be adapted to showcase what makes your business unique.
