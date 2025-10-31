@@ -1,9 +1,9 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
-    // Allow public read access for any file in the 'public-assets' directory.
+    // Allow public read access for any file in the 'publiccmsbucket' directory.
     // This is for website images, logos, etc.
-    match /public-assets/{allPaths=**} {
+    match /publiccmsbucket/{allPaths=**} {
       allow read: if true;
       allow write: if request.auth != null; // Optional: Only logged-in users can upload
     }
