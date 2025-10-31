@@ -65,7 +65,7 @@ export default function ServicesSection() {
             </CardHeader>
             <CardContent className="flex-grow">
               <CardDescription>
-                Our standard tint provides excellent UV protection and privacy, a great starting point for any vehicle.
+                Shrinks better, looks cleaner, and doesn’t fade Gen 4 dyed film with solid, factory-match color Never turns purple, never fails, no surprises Backed by a Limited National Lifetime Warranty
               </CardDescription>
             </CardContent>
           </Card>
