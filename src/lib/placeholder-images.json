@@ -21,7 +21,7 @@
     {
       "id": "gallery-car-after-1",
       "description": "Car with dark tinted windows.",
-      "imageUrl": "https://images.unsplash.com/photo-1710179721186-722ee125c90b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0aW50ZWQlMjBjYXJ8ZW58MHx8fHwxNzYxMzYwMTQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-6663131171-dc932.firebasestorage.app/o/public%20folder%2Fimage8E-Select.png?alt=media&token=135911cf-3aeb-41ea-8ebf-311cde74b6ca",
       "imageHint": "tinted car"
     },
     {
@@ -33,7 +33,7 @@
     {
       "id": "gallery-house-after-1",
       "description": "House with reflective tinted windows for privacy.",
-      "imageUrl": "https://images.unsplash.com/photo-1632245084232-92b16ac80d92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0aW50ZWQlMjB3aW5kb3d8ZW58MHx8fHwxNzYxMzYwMTQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1632245084232-92b16ac80d92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0aW50ZWQlMjB3aW5kb3d8ZW58MHx8fHwxNzYxMzYwMTQ3fDA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "tinted window"
     },
     {
@@ -45,13 +45,13 @@
     {
       "id": "gallery-office-after-1",
       "description": "Office building with dark tinted glass facade.",
-      "imageUrl": "https://images.unsplash.com/photo-1623662063260-a461db100d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0aW50ZWQlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjEzNjAxNDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1623662063260-a461db100d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0aW50ZWQlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjEzNjAxNDd8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "tinted building"
     },
     {
       "id": "guarantee-image",
       "description": "Technician applying window tint to a car with precision.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-6663131171-dc932.firebasestorage.app/o/public%20folder%2Fimage8E-Select.png?alt=media&token=135911cf-3aeb-41ea-8ebf-311cde74b6ca",
+      "imageUrl": "https://images.unsplash.com/photo-1628125827365-1726131b75c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0aW50JTIwaW5zdGFsbGF0aW9ufGVufDB8fHx8MTc2MTM5OTg4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tint installation"
     }
   ]
