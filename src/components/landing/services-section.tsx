@@ -117,7 +117,7 @@ export default function ServicesSection() {
                 From 5% limo tint to 70% ultra-light, we’ve got every option to match your style, comfort, and privacy needs.
             </p>
             <p className="text-foreground/80">
-                For example, you could talk about the specific brands of film you use, your years of experience in the industry, or special offers you might have for new customers. This space is flexible and can be adapted to showcase what makes your business unique.
+                Need Help Choosing? Not sure which shade is right for you? We’ll help you find the perfect balance of style, comfort, and legality for your vehicle.
             </p>
           </div>
           <div className="flex flex-col items-center text-center lg:col-span-2 mt-8">
