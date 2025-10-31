@@ -95,20 +95,8 @@ export default function ServicesSection() {
             </CardContent>
           </Card>
         </div>
-        <div className="mt-16 grid lg:grid-cols-2 gap-12 items-center container">
-          <div className="flex flex-col items-start text-left">
-            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary">
-              <BadgeCheck className="h-5 w-5" />
-              <span className="font-semibold">Our Guarantee</span>
-            </div>
-            <p className="mt-4 text-lg text-foreground/80">
-              Only winners come to WinWin — and winners get guaranteed results. Every tint we install comes with a 100% satisfaction guarantee. If your tint fails because of our work or the film itself, we’ll fix or replace it at no cost within the warranty period. Life happens, but when it comes to our craftsmanship, we don’t play around. WinWin means you win twice — once with great tint, and again with peace of mind.
-            </p>
-            <p className="mt-4 text-sm text-foreground/60">
-              Our work is covered by a lifetime workmanship warranty for the original owner. Tint films are backed by the manufacturer’s 5–10 year warranty, depending on the film selected.
-            </p>
-          </div>
-          <div className="flex justify-center">
+        <div className="mt-16 grid lg:grid-cols-2 gap-12 items-start container">
+          <div className="space-y-4">
              {guaranteeImage && (
               <Image
                 src={guaranteeImage.imageUrl}
@@ -119,6 +107,29 @@ export default function ServicesSection() {
                 data-ai-hint={guaranteeImage.imageHint}
               />
             )}
+            <div className="flex flex-col items-start text-left">
+                <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary">
+                <BadgeCheck className="h-5 w-5" />
+                <span className="font-semibold">Our Guarantee</span>
+                </div>
+                <p className="mt-4 text-lg text-foreground/80">
+                Only winners come to WinWin — and winners get guaranteed results. Every tint we install comes with a 100% satisfaction guarantee. If your tint fails because of our work or the film itself, we’ll fix or replace it at no cost within the warranty period. Life happens, but when it comes to our craftsmanship, we don’t play around. WinWin means you win twice — once with great tint, and again with peace of mind.
+                </p>
+                <p className="mt-4 text-sm text-foreground/60">
+                Our work is covered by a lifetime workmanship warranty for the original owner. Tint films are backed by the manufacturer’s 5–10 year warranty, depending on the film selected.
+                </p>
+            </div>
+          </div>
+          <div className="flex flex-col items-start text-left space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2 text-secondary-foreground">
+                <span className="font-semibold">Additional Information</span>
+            </div>
+            <p className="text-lg text-foreground/80">
+                This is a new section where you can add more details about your services, company values, or anything else you'd like to highlight. You can easily edit this placeholder text to fit your needs.
+            </p>
+            <p className="text-foreground/80">
+                For example, you could talk about the specific brands of film you use, your years of experience in the industry, or special offers you might have for new customers. This space is flexible and can be adapted to showcase what makes your business unique.
+            </p>
           </div>
         </div>
       </div>
