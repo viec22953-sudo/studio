@@ -116,7 +116,7 @@ export default function ServicesSection() {
             <p className="text-lg text-foreground/80">
                 From 5% limo tint to 70% ultra-light, we’ve got every option to match your style, comfort, and privacy needs.
             </p>
-            <p className="text-foreground/80 font-bold">Need Help Choosing?</p>
+            <p className="text-secondary-foreground font-bold">Need Help Choosing?</p>
             <p className="text-foreground/80">
                 Not sure which shade is right for you? We’ll help you find the perfect balance of style, comfort, and legality for your vehicle.
             </p>
