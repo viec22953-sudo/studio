@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Car, Home, ShieldCheck, BadgeCheck } from "lucide-react";
+import { Car, Home, ShieldCheck, BadgeCheck, Star, Shield, Award } from "lucide-react";
 
 export default function ServicesSection() {
   return (
@@ -48,6 +48,45 @@ export default function ServicesSection() {
             <CardContent className="flex-grow">
               <CardDescription>
                 Choose our top-of-the-line ceramic films for maximum heat rejection without interfering with electronic signals. The ultimate in performance and clarity.
+              </CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="text-center flex flex-col h-full max-w-sm mx-auto">
+            <CardHeader>
+              <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
+                <Star className="h-8 w-8" />
+              </div>
+              <CardTitle>Good</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <CardDescription>
+                Our standard tint provides excellent UV protection and privacy, a great starting point for any vehicle.
+              </CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="text-center flex flex-col h-full max-w-sm mx-auto">
+            <CardHeader>
+              <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
+                <Shield className="h-8 w-8" />
+              </div>
+              <CardTitle>Better</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <CardDescription>
+                Upgrade to our mid-tier tint for enhanced heat rejection and durability, balancing performance and value.
+              </CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="text-center flex flex-col h-full max-w-sm mx-auto">
+            <CardHeader>
+              <div className="mx-auto bg-primary/10 text-primary p-3 rounded-full mb-4 w-fit">
+                <Award className="h-8 w-8" />
+              </div>
+              <CardTitle>Best</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <CardDescription>
+                Our premium ceramic film offers maximum IR and heat rejection, superior clarity, and long-lasting performance.
               </CardDescription>
             </CardContent>
           </Card>
