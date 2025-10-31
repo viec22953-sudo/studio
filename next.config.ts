@@ -28,12 +28,6 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'storage.cloud.google.com',
-        port: '',
-        pathname: '/**',
-      }
     ],
   },
 };
