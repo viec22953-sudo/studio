@@ -1,6 +1,13 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
+    // Allow public read access for any file in the 'public-assets' directory.
+    // This is for website images, logos, etc.
+    match /public-assets/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null; // Optional: Only logged-in users can upload
+    }
+
     // Allow anyone to CREATE files in the "leads" folder for the public form.
     // Explicitly deny read, update, and delete to protect submitted data.
     match /leads/{leadId} {
@@ -8,11 +15,6 @@ service firebase.storage {
       allow create: if true;
     }
 
-    // All other paths in storage are not publicly accessible.
-    // This rule is not strictly necessary if you have no other match statements,
-    // as access is denied by default, but it makes the intent clear.
-    match /{path=**} {
-      allow read, write: if false;
-    }
+    // All other paths in storage are not publicly accessible by default.
   }
 }
