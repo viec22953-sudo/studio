@@ -91,7 +91,7 @@ export default function ServicesSection() {
             </CardHeader>
             <CardContent className="flex-grow">
               <CardDescription>
-                Our premium ceramic film offers maximum IR and heat rejection, superior clarity, and long-lasting performance.
+                Dye-free nano carbon ceramic Reduces heat up to 96% Blocks 99% of harmful UV rays. Guaranteed never to fade. Matches most factory tint. No signal interference. Limited National Lifetime Warranty.
               </CardDescription>
             </CardContent>
           </Card>
