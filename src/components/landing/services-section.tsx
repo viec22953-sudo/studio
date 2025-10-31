@@ -78,7 +78,7 @@ export default function ServicesSection() {
             </CardHeader>
             <CardContent className="flex-grow">
               <CardDescription>
-                Upgrade to our mid-tier tint for enhanced heat rejection and durability, balancing performance and value.
+                Nano ceramic built on proven carbon technology Reduces infrared heat by up to 80% 99% UV rejection with zero signal interference Guaranteed color stability — never fades or turns purple Factory tint match look Limited National Lifetime Warranty
               </CardDescription>
             </CardContent>
           </Card>
