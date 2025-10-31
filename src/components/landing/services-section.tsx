@@ -107,7 +107,7 @@ export default function ServicesSection() {
                 data-ai-hint={guaranteeImage.imageHint}
               />
             )}
-            <div className="flex flex-col items-start text-left">
+            <div className="flex flex-col items-center text-center">
                 <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary">
                 <BadgeCheck className="h-5 w-5" />
                 <span className="font-semibold">Our Guarantee</span>
