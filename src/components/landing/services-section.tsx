@@ -1,3 +1,4 @@
+
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Car, Home, ShieldCheck, BadgeCheck, Star, Shield, Award } from "lucide-react";
 import Image from "next/image";
@@ -110,7 +111,7 @@ export default function ServicesSection() {
           </div>
           <div className="flex flex-col items-start text-left space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2 text-secondary-foreground">
-                <span className="font-semibold">Additional Information</span>
+                <span className="font-semibold">We offer a wide selection of shades to choose from</span>
             </div>
             <p className="text-lg text-foreground/80">
                 This is a new section where you can add more details about your services, company values, or anything else you'd like to highlight. You can easily edit this placeholder text to fit your needs.
