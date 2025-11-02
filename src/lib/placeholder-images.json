@@ -8,9 +8,9 @@
     },
     {
       "id": "about-team",
-      "description": "A diverse team of 8 professional employees standing together in a modern office, smiling confidently.",
-      "imageUrl": "https://images.unsplash.com/photo-1646531839844-034be6a06aad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8d2luZG93JTIwdGludHxlbnwwfHx8fDE3NjEzNjAxMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "window tint"
+      "description": "San Antonio skyline silhouette.",
+      "imageUrl": "https://storage.googleapis.com/studioprompt-helper-images/42b94f6c-e54b-4f9e-a10c-3572620f4c2c.png",
+      "imageHint": "san antonio"
     },
     {
       "id": "gallery-car-before-1",

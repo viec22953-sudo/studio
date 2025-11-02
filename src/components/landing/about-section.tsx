@@ -26,8 +26,8 @@ export default function AboutSection() {
                 src={aboutImage.imageUrl}
                 alt={aboutImage.description}
                 width={800}
-                height={600}
-                className="rounded-xl object-cover aspect-video"
+                height={800}
+                className="rounded-xl object-contain aspect-square"
                 data-ai-hint={aboutImage.imageHint}
               />
             )}
