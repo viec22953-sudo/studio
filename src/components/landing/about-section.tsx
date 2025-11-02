@@ -16,7 +16,7 @@ export default function AboutSection() {
               Our expert technicians use precision techniques to ensure a
               flawless finish every time. We believe in enhancing your comfort
               and security, whether you're on the road or in your home,
-              delivering a win-win solution for every customer.
+              delivering a win-win-win solution for every customer.
             </p>
           </div>
           <div className="flex justify-center">
