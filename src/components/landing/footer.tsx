@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container text-center text-xs text-foreground/60 mt-8">
-        © {new Date().getFullYear()} WinWin WindowTint. All Rights Reserved.
+        © {new Date().getFullYear()} WinWinWindowTint. All Rights Reserved.
       </div>
     </footer>
   );
