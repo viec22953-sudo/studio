@@ -10,15 +10,15 @@ export const metadata: Metadata = {
   keywords: ['window tint san antonio', 'car window tinting', 'home window tinting', 'ceramic tint', 'office window tinting'],
   icons: {
     icon: [
-      { url: '/medpub/favicon.ico', sizes: 'any' },
-      { url: '/medpub/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
-      { url: '/medpub/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon2/favicon.ico', sizes: 'any' },
+      { url: '/favicon2/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon2/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
     ],
     apple: [
-      { url: '/medpub/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/favicon2/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
-  manifest: '/medpub/site.webmanifest',
+  manifest: '/favicon2/site.webmanifest',
 };
 
 export default function RootLayout({
