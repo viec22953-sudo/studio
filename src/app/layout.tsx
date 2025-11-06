@@ -8,6 +8,17 @@ export const metadata: Metadata = {
   description:
     'Enhance and protect your vehicle, home, or office with WinWin WindowTint. We offer professional automotive, residential, and commercial window tinting services in San Antonio, TX. Get a free quote today!',
   keywords: ['window tint san antonio', 'car window tinting', 'home window tinting', 'ceramic tint', 'office window tinting'],
+  icons: {
+    icon: [
+      { url: '/medpub/favicon.ico', sizes: 'any' },
+      { url: '/medpub/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/medpub/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/medpub/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/medpub/site.webmanifest',
 };
 
 export default function RootLayout({
@@ -21,10 +32,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/medpub/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/medpub/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/medpub/favicon-16x16.png" />
-        <link rel="manifest" href="/medpub/site.webmanifest" />
       </head>
       <body className="font-body antialiased">
         <FirebaseClientProvider>
