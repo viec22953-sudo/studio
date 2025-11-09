@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export default function Header() {
@@ -9,10 +10,14 @@ export default function Header() {
         className="flex items-center justify-center"
         prefetch={false}
       >
-        <span className="text-xl font-bold tracking-tight text-primary">
-          WinWin
-        </span>
-        <span className="text-xl font-bold tracking-tight">WindowTint</span>
+        <Image
+          src="/favicon.ico"
+          alt="WinWinWindowTint Logo"
+          width={32}
+          height={32}
+          className="mr-2"
+        />
+        <span className="sr-only">WinWinWindowTint</span>
       </Link>
       <nav className="ml-auto hidden lg:flex items-center gap-6">
         <Link
