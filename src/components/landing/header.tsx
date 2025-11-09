@@ -17,7 +17,10 @@ export default function Header() {
           height={32}
           className="mr-2"
         />
-        <span className="sr-only">WinWinWindowTint</span>
+        <span className="text-xl font-bold tracking-tight text-primary">
+          WinWin
+        </span>
+        <span className="text-xl font-bold tracking-tight">WindowTint</span>
       </Link>
       <nav className="ml-auto hidden lg:flex items-center gap-6">
         <Link
