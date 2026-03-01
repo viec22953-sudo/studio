@@ -5,14 +5,14 @@ service firebase.storage {
     // This is for website images, logos, etc.
     match /publiccmsbucket/{allPaths=**} {
       allow read: if true;
-      allow write: if request.auth != null; // Optional: Only logged-in users can upload
+      allow write: if request.auth != null; // Only logged-in users can upload
     }
 
     // Allow anyone to CREATE files in the "leads" folder for the public form.
     // Explicitly deny read, update, and delete to protect submitted data.
     match /leads/{leadId} {
       allow read, update, delete: if false;
-      allow create: if true;
+      allow create: if request.resource.size < 5 * 1024 * 1024; // 5 MB max
     }
 
     // All other paths in storage are not publicly accessible by default.

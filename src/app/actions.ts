@@ -1,14 +1,34 @@
-"use server";
+"use client";
 
 import { z } from "zod";
-import { initializeApp, getApps, getApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { firebaseConfig } from "@/firebase/config";
+import { initializeFirebase } from "@/firebase";
+import { collection, addDoc } from "firebase/firestore";
 
-// Initialize Firebase for server-side use
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore(app);
+// ---------------------------------------------------------------------------
+// Simple client-side rate limiter
+// ---------------------------------------------------------------------------
+const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
+const MAX_REQUESTS_PER_WINDOW = 5;
 
+let requestTimestamps: number[] = [];
+
+function isRateLimited(): boolean {
+  const now = Date.now();
+  requestTimestamps = requestTimestamps.filter(
+    (t) => now - t < RATE_LIMIT_WINDOW_MS
+  );
+
+  if (requestTimestamps.length >= MAX_REQUESTS_PER_WINDOW) {
+    return true;
+  }
+
+  requestTimestamps.push(now);
+  return false;
+}
+
+// ---------------------------------------------------------------------------
+// Validation schema
+// ---------------------------------------------------------------------------
 const QuoteSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -34,10 +54,18 @@ export type State = {
   success?: boolean;
 };
 
-export async function validateQuote(
-  prevState: State,
+export async function validateQuoteClient(
   formData: FormData
 ): Promise<State> {
+  // --- Rate-limit check ---
+  if (isRateLimited()) {
+    return {
+      message:
+        "Too many requests. Please wait a minute before submitting again.",
+      success: false,
+    };
+  }
+
   const validatedFields = QuoteSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
@@ -55,7 +83,8 @@ export async function validateQuote(
   }
 
   try {
-    await addDoc(collection(db, "contacts"), {
+    const { firestore } = initializeFirebase();
+    await addDoc(collection(firestore, "contacts"), {
       ...validatedFields.data,
       createdAt: new Date(),
     });
@@ -66,7 +95,8 @@ export async function validateQuote(
   } catch (e: any) {
     console.error("Error adding document: ", e);
     return {
-      message: "Database error: Could not save your quote. Please try again later.",
+      message:
+        "Database error: Could not save your quote. Please try again later.",
       success: false,
     };
   }
